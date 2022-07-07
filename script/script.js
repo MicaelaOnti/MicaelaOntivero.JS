@@ -76,14 +76,19 @@ function showCart() {
     totalCompra.innerText = ("Total: $ " + total)
     div.append(totalCompra)
 
-//VACIAR CARRITO 
-   let deleteCart = document.createElement("button")
-    deleteCart.innerText = ("Vaciar carrito")
-    div.append(deleteCart)
+//VACIAR CARRITO/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+let deleteCart = document.createElement("button")
+deleteCart.innerText = ("Vaciar carrito")
+div.append(deleteCart)
 
-    deleteCart.addEventListener("click", () => {
-        vaciarCarrito()
-    })
+deleteCart.onclick = () => {
+ 
+    cart = []
+    div.innerHTML = ``
+    console.log(cart)
+}
 
 
 //cart LocalStorage y JSON 
@@ -160,4 +165,3 @@ function subscribirse(){
 }
  
 subscribirse()
-
