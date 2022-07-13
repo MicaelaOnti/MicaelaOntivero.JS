@@ -76,9 +76,7 @@ function showCart() {
     totalCompra.innerText = ("Total: $ " + total)
     div.append(totalCompra)
 
-//VACIAR CARRITO/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    
+//VACIAR CARRITO 
 let deleteCart = document.createElement("button")
 deleteCart.innerText = ("Vaciar carrito")
 div.append(deleteCart)
@@ -165,3 +163,96 @@ function subscribirse(){
 }
  
 subscribirse()
+
+//test time out con sweetAlert2
+
+/*
+const publicidadtimeOut = () => {
+    setTimeout(()=>{
+        Swal.fire({
+            imageUrl: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/255/420/products/cassandra1-fa8cac88ea908e890d16571237876276-640-0.jpg',
+            imageHeight: 180,
+            text: "Proximamente ✿ Cassie"
+        })
+    }, 7000);
+}
+publicidadtimeOut()
+*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// TEST DE FETCH CON URL 
+const getDataByAJAX = () => {
+    $.ajax({
+        url: "https://swapi.dev/api/people",
+        success: function (result){
+            //console.log("result: ",result)
+        },
+        error: (error) =>{
+            console.error(error);
+        }
+    });
+}
+
+getDataByAJAX()
+
+const fetchLocalData=()=>{
+    fetch('./data.json').then((response)=>response.json())
+    .then((result)=>{
+        renderTitle(result.contactoSection)
+    }).catch((err)=>{
+        console.error(err)
+    })
+}
+
+fetchLocalData()
+
+const rederContactSection = (footer)=> {
+    console.log(footer)
+}
+
+const renderTitle = (footer)=>{
+    //console.log(footer)
+    let container = document.getElementById('contacto')
+    let title = document.createElement('p')
+    title.textContent ="Desarrollado por "+ footer.contacto +" " + footer.mail
+    container.append(title)
+}
+
+///////////////////////////////////////////////////////////
+
+
+// FETCH Y ASYNC/AWAIT CON JSON LOCAL
+/*
+const createContacto = (p) => {
+    footer.innerHTML += `
+        <div class="inFooter">
+            <h2>${p.contacto}</h2>
+            <h2>${p.mail}</h2>
+        </div>
+    `
+}
+
+fetch('./data.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        createBook(data[0]);
+    })
+    .catch(error => console.error(error))
+
+
+const fetchLocal = async () => {
+    try {
+        const response = await fetch('./data.json');
+        const data = await response.json();
+        
+        console.log(data);
+        createBook(data[1]);
+    } catch (error) {
+        console.error(error);
+    }
+}
+fetchLocal();
+*/
