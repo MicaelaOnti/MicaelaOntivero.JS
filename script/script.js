@@ -59,9 +59,7 @@ function showCart() {
         divCart.innerHTML += ` 
         <img src="${element.img}">
         <h6>${element.name}</h6>
-        <h6>${'$'+ element.price}</h6>
-        <input class="sizeSeletor" type="number" min="36" max="39">
-        <button class="eliminar" data-id=${element.id}>X</button>`
+        <h6>${'$'+ element.price}</h6>`
 
 
         div.appendChild(divCart)
