@@ -221,38 +221,3 @@ const renderTitle = (footer)=>{
 }
 
 ///////////////////////////////////////////////////////////
-
-
-// FETCH Y ASYNC/AWAIT CON JSON LOCAL
-/*
-const createContacto = (p) => {
-    footer.innerHTML += `
-        <div class="inFooter">
-            <h2>${p.contacto}</h2>
-            <h2>${p.mail}</h2>
-        </div>
-    `
-}
-
-fetch('./data.json')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        createBook(data[0]);
-    })
-    .catch(error => console.error(error))
-
-
-const fetchLocal = async () => {
-    try {
-        const response = await fetch('./data.json');
-        const data = await response.json();
-        
-        console.log(data);
-        createBook(data[1]);
-    } catch (error) {
-        console.error(error);
-    }
-}
-fetchLocal();
-*/
