@@ -68,13 +68,13 @@ let sizeStock = [{36:10, 37:10, 38:10, 39:10}]
 //new products
 function addProducts(){
 const addProduct = [...products, { id: "undefined" , description: "undefined", name:"sin definir ", price: "sin definir", sizes: [36 ,37, 38, 39], img:""  }]
-console.log(addProduct)
+//console.log(addProduct)
 }
 addProducts()
 
 //new sizes
 function addSizes(){
 const addSize = [...sizeStock,{"undefined": 10}]
-console.log(addSize)
+//console.log(addSize)
 }
 addSizes()
